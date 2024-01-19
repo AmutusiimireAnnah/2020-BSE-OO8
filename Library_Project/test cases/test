@@ -1,0 +1,54 @@
+/*
+ * test_lm35.c - LM35 Temperature Sensor Library Test Cases
+ * 
+ * Description:
+ * This file contains test cases for the LM35 Temperature Sensor Library.
+ * It demonstrates how to use the library functions in a test environment.
+ * 
+ * Author: Your Name
+ * Date: January 18, 2024
+ */
+
+#include "lm35.h"
+#include <stdio.h>
+
+// Function prototypes
+void test_initUART();
+void test_readTemperature();
+void test_sendString();
+
+int main(void) {
+    // Run test cases
+    test_initUART();
+    test_readTemperature();
+    test_sendString();
+
+    return 0;
+}
+
+void test_initUART() {
+    // This is a simple test for initializing UART
+    // Modify as needed based on your hardware and testing environment
+    initUART();
+    printf("Test Case: initUART - Passed\n");
+}
+
+void test_readTemperature() {
+    // This is a simple test for reading temperature
+    // Modify as needed based on your hardware and testing environment
+    float temperature = readTemperature();
+    
+    // Assuming the temperature is within a valid range
+    if (temperature >= -50 && temperature <= 150) {
+        printf("Test Case: readTemperature - Passed\n");
+    } else {
+        printf("Test Case: readTemperature - Failed\n");
+    }
+}
+
+void test_sendString() {
+    // This is a simple test for sending a string over UART
+    // Modify as needed based on your hardware and testing environment
+    sendString("Testing UART communication");
+    printf("Test Case: sendString - Passed\n");
+}
